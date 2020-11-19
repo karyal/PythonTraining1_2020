@@ -8,3 +8,7 @@ def index(request):
     # rendering html document
     # return HttpResponse("Hello from App3")
     return render(request, 'First.html')
+
+def get_value(request):
+    var1 = request.GET.get('var1') # getting value from URL (Address Bar)
+    return HttpResponse("Full Name : "+str(var1))# display on browser
