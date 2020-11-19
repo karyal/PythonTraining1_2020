@@ -11,4 +11,6 @@ def index(request):
 
 def get_value(request):
     var1 = request.GET.get('var1') # getting value from URL (Address Bar)
-    return HttpResponse("Full Name : "+str(var1))# display on browser
+    # return HttpResponse("Full Name : "+str(var1))# display on browser
+    context ={'value1': var1}
+    return render(request, 'Second.html', context) # Sending value to HTML Template (HTML Document)
