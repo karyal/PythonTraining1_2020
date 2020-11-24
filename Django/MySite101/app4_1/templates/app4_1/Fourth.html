@@ -1,0 +1,17 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading Static Contents</title>
+     <link rel = "stylesheet" type = "text/css" href = "{% static 'app4_1/css/styles.css' %}" />
+</head>
+<body>
+<h1 class="style1">Loading Static Contents</h1>
+<h2>Images</h2>
+<img src="{%  static 'app4_1/images/image_2.png' %}">
+<h2>Java Script</h2>
+<input type="button" value="Click Me!" onclick="f1()">
+</body>
+</html>
+<script type="text/javascript" src="{% static 'app4_1/js/my_script.js' %}"></script>
