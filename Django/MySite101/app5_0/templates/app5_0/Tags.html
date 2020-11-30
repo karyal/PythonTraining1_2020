@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags</title>
+</head>
+<body>
+    <!-- variables -->
+    {{ value }}<!-- value1 is variable --> <!-- print - display -->
+    {{ "Nepal" }}<!-- value1 is variable --> <!-- print - display -->
+    {{ 125347 }}<!-- value1 is variable --> <!-- print - display -->
+
+    {{ value|upper }} <!-- filter -->
+    {{ value|lower }} <!-- filter -->
+
+    <!-- Templating Language -->
+    <!-- variable, looping, controlling, etc -->
+
+    <!-- Tags -->
+{% comment %}
+    <h3>1. Autoescape</h3>
+    Value (org) = {{ value }}
+    <br/>
+    {% autoescape on %}
+        Value = {{ value }}
+    {% endautoescape %}
+    <br/>
+    {% autoescape off %}
+        Value = {{ value }}
+    {% endautoescape %}
+
+    <h3>2. csrf_token </h3>
+
+{% endcomment %}
+    <h3>3. Cycle</h3>
+    <p>Fruits</p>
+    {% for fruit in value %}
+        <li class="{% cycle 'style-1' 'style-2' %}">{{ fruit }}</li>
+    {% endfor %}
+</body>
+</html>
