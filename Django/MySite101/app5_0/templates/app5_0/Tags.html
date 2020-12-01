@@ -18,7 +18,7 @@
 
     <!-- Tags -->
 {% comment %}
-    <h3>1. Autoescape</h3>
+<h3>Autoescape</h3>
     Value (org) = {{ value }}
     <br/>
     {% autoescape on %}
@@ -29,19 +29,39 @@
         Value = {{ value }}
     {% endautoescape %}
 
-    <h3>2. csrf_token </h3>
+<h3>csrf_token </h3>
 
-
-    <h3>Cycle</h3>
+<h3>Cycle</h3>
     <p>Fruits</p>
     {% for fruit in value %}
         <li class="{% cycle 'style-1' 'style-2' %}">{{ fruit }}</li>
     {% endfor %}
-{% endcomment %}
+
 
 <h3>firstof</h3>
     {% firstof var1 var2 var3 %}
 
+<h3>filter</h3>
+    {% filter lower %}
+        <p>{{ var1 }}</p>
+    {% endfilter %}
+
+    {% filter upper %}
+        <p>{{ var1 }}</p>
+    {% endfilter %}
+
+    {% filter force_escape | upper %}
+        <p>{{ var1 }}</p>
+    {% endfilter %}
+{% endcomment %}
+
+<h3>Fruits</h3>
+    <p>{{ fruits }}</p>
+    {% for fruit in fruits %}
+        <p>{{ fruit }}</p>
+    {% empty %}
+        <p>No items found</p>
+    {%  endfor %}
 
 </body>
 </html>

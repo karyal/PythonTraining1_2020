@@ -28,8 +28,20 @@ def tags(request):
     #return render(request,  'app5_0/about.html', context)
 
     # firstof
-    context = {'var1':None, 'var2':None, 'var3':3}
+    #context = {'var1':None, 'var2':None, 'var3':3}
+    #return render(request, 'app5_0/Tags.html', context)
+
+    # filter
+    # context = {'var1':'<b>Lorem Ipsum Is simplY Dummy teXt of tHe printinG</b>'}
+    # return render(request, 'app5_0/Tags.html', context)
+
+    #for
+    #fruits = ['Apples', 'Bananas', 'Pears', 'Grapes', 'Oranges']
+    fruits = []
+    context = {'fruits': fruits}
     return render(request, 'app5_0/Tags.html', context)
+
+
 
 
 
