@@ -44,14 +44,9 @@ def tags(request):
     #context = {'sub1':56, 'sub2':87, 'sub3':54, 'sub4':90, 'PM':40}
     #return render(request, 'app5_0/Tags.html', context)
 
-    #include
-    return render(request, 'app5_0/body.html')
+    # include
+    # return render(request, 'app5_0/body.html')
 
-
-
-
-
-
-
-
-
+    # load
+    # pip install humanize
+    return render(request, 'app5_0/Tags.html')
