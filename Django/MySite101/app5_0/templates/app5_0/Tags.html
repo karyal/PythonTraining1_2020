@@ -31,11 +31,16 @@
 
     <h3>2. csrf_token </h3>
 
-{% endcomment %}
+
     <h3>3. Cycle</h3>
     <p>Fruits</p>
     {% for fruit in value %}
         <li class="{% cycle 'style-1' 'style-2' %}">{{ fruit }}</li>
     {% endfor %}
+{% endcomment %}
+
+
+
+
 </body>
 </html>
