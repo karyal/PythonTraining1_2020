@@ -35,12 +35,17 @@ def tags(request):
     # context = {'var1':'<b>Lorem Ipsum Is simplY Dummy teXt of tHe printinG</b>'}
     # return render(request, 'app5_0/Tags.html', context)
 
-    #for
+    #for loop
     #fruits = ['Apples', 'Bananas', 'Pears', 'Grapes', 'Oranges']
-    fruits = []
-    context = {'fruits': fruits}
-    return render(request, 'app5_0/Tags.html', context)
+    #context = {'fruits': fruits}
+    #return render(request, 'app5_0/Tags.html', context)
 
+    # if statment
+    #context = {'sub1':56, 'sub2':87, 'sub3':54, 'sub4':90, 'PM':40}
+    #return render(request, 'app5_0/Tags.html', context)
+
+    #include
+    return render(request, 'app5_0/body.html')
 
 
 

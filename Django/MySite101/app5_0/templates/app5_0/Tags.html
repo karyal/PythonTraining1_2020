@@ -53,15 +53,30 @@
     {% filter force_escape | upper %}
         <p>{{ var1 }}</p>
     {% endfilter %}
-{% endcomment %}
+
 
 <h3>Fruits</h3>
     <p>{{ fruits }}</p>
+
     {% for fruit in fruits %}
         <p>{{ fruit }}</p>
     {% empty %}
         <p>No items found</p>
     {%  endfor %}
+
+
+<h3>if Statement</h3>
+{% if sub1 >= PM and sub2 >= PM and  sub3 >= PM and sub4 >= PM %}
+    {% filter upper %}
+        Result : pass
+    {% endfilter %}
+{% else %}
+    {% filter upper %}
+        Result : fail
+    {% endfilter %}
+{% endif %}
+
+{% endcomment %}
 
 </body>
 </html>
