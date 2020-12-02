@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template-Filter</title>
+</head>
+<body>
+    <h3>Templates Filters</h3>
+<!-- add -->
+    {% comment "add" %}
+    <!-- add -->
+    {{ val1|add:"12" }}
+    {{ val1|add:val2 }}
+    {% endcomment %}
+
+<!-- addslashes -->
+    {% comment "addslashes" %}
+    {{ val1|addslashes }}
+    {% endcomment %}
+
+<!-- capfirst -->
+    {% comment "capfirst" %}
+    {{ val1|capfirst }}
+    {% endcomment %}
+
+<!-- center -->
+    {% comment "center" %}
+    {{ val1|center:"25"}}
+    {{ val1 }}
+    {% endcomment %}
+
+<!-- cut -->
+    {% comment "cut" %}
+    {{ val1|cut:' ' }}
+    {% endcomment %}
+
+<!-- date -->
+    {% comment "cut" %}
+    {{ val1|date:"D d M Y" }}
+    {% endcomment %}
+
+<!-- default -->
+    {% comment "defualt" %}
+    {{ val1|default:"NA" }}
+    {% endcomment %}
+
+<!-- default_if_none -->
+    {% comment "defualt" %}
+    {{ val1|default_if_none:"NA" }}
+    {% endcomment %}
+
+<!-- dictsort dictsortreversed -->
+    {% comment "dictsort" %}
+    {{ val1|dictsort:"name" }}
+    {{ val1|dictsort:"age" }}
+
+    {% for person in val1|dictsort:"name" %}
+        {{ person.name }} - {{ person.age }}<br/>
+    {% endfor %}
+    {% endcomment %}
+
+<!-- divisibleby -->
+    {% comment "dictsort" %}
+    {{ 10|divisibleby:2 }}
+    {% endcomment %}
+
+<!-- escape -->
+    {% comment %}
+        {% autoescape off %}
+            {{ val1|escape }}
+        {% endautoescape %}
+    {% endcomment %}
+
+<!-- filesizeformat -->
+    {% comment %}
+    {{ val1|filesizeformat }}
+    {% endcomment %}
+
+<!-- first last length length_is-->
+    {% comment %}
+    {{ val1|first }}
+    {{ val1|last }}
+    {{ val1|length }}
+    {{ val1|length }}
+    {{ val1|length_is:"4" }}
+    {% endcomment %}
+
+<!-- floatformat -->
+    {% comment %}
+    {{ val1.n1|floatformat }}
+    {{ val1.n2|floatformat }}
+    {{ val1.n3|floatformat }}
+    <br/>
+    {{ val1.n1|floatformat:2 }}
+    {{ val1.n2|floatformat:2 }}
+    {{ val1.n3|floatformat:2 }}
+    <br/>
+    {{ val1.n1|floatformat:"2" }}
+    {{ val1.n2|floatformat:"2" }}
+    {{ val1.n3|floatformat:"2" }}
+    <br/>
+    {{ val1.n1|floatformat:"-2" }}
+    {{ val1.n2|floatformat:"-2" }}
+    {{ val1.n3|floatformat:"-2" }}
+    {% endcomment %}
+
+<!-- floatformat -->
+    {% comment %}
+    {% autoescape on %}
+        {{ val1|linebreaks|force_escape }}
+    {% endautoescape %}
+    {% endcomment %}
+
+<!-- get_digit -->
+    {% comment %}
+    {% autoescape on %}
+        {{val1}}<br/>
+        {{val1|get_digit:"4"}}
+    {% endautoescape %}
+    {% endcomment %}
+
+<!-- iriencode -->
+    {% comment %}
+        {{val1}}<br/>
+        {{val1|iriencode}}
+    {% endcomment %}
+
+<!-- join -->
+    {% comment %}
+      {{ val1|join:";" }}
+    {% endcomment %}
+
+<!-- json_script -->
+    {% comment %}
+      {{ val1|json_script }}<br/>
+    {% endcomment %}
+
+<!-- line_breaks -->
+    {% comment %}
+      {% for value in val1  %}
+        {{ value|linebreaks }}
+        {{ value|linebreaksbr }}
+        {{ value|linenumbers }}
+    {% endfor %}
+    {% endcomment %}
+
+<!-- ljust lower -->
+    {% comment %}
+    {{ "Nepal"|ljust:"10" | lower }}
+    {{ "Nepal"|rjust:"10" | lower }}
+    {% endcomment %}
+
+<!-- make_list -->
+    {% comment %}
+    {{ "Kathmandu, Nepal"|make_list }}
+    {{ "12345"|make_list }}
+    {% endcomment %}
+
+<!-- phone2numeric -->
+     {% comment %}
+    {{ "123-456789"|phone2numeric }}
+    {{ "123-hello"|phone2numeric }}
+    {% endcomment %}
+
+    {{ '2'|pluralize }}
+    {{ '2'|pluralize:"es" }}
+
+</body>
+</html>

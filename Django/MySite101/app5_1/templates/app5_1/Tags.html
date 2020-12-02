@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template-Tags</title>
+</head>
+<body>
+<h3>Tags</h3>
+{% comment "Example of Comment in Django Tag" %}
+        <!-- autoescape -->
+        {% autoescape off %}
+        {{ var_autoescape }}
+        {% endautoescape %}
+
+        {% autoescape on %}
+        {{ var_autoescape }}
+        {% endautoescape %}
+{% endcomment %}
+
+{% comment "autoescape" %}
+        {% autoescape on %}
+        {{ var_autoescape }}
+        {% endautoescape %}
+{% endcomment %}
+
+{% comment "autoescape" %}
+    <!-- cycle -->
+    {% for fruit in fruits %}
+        <li class="{% cycle 'style-1' 'style-2' %}">{{ fruit }}</li>
+    {% endfor %}
+{% endcomment %}
+
+{% comment "filter" %}
+    {% filter lower %}
+        <p>This text will be HTML-escaped, and will appear in all lowercase.</p>
+    {% endfilter %}
+
+    {% filter force_escape|lower %}
+        <p>This text will be HTML-escaped, and will appear in all lowercase.</p>
+    {% endfilter %}
+{% endcomment %}
+
+{% comment "firstof" %}
+    {% firstof var1 var2 var3 %}
+{% endcomment %}
+
+{% comment "for" %}
+    <h3>List of Fruits</h3>
+    <ul>
+        {% for fruit in fruits %}
+            <li>{{ fruit }}</li>
+        {% endfor %}
+    </ul>
+{% endcomment %}
+
+{% comment "for...empty" %}
+    <h3>List of Fruits</h3>
+    <ul>
+        {% for fruit in fruits %}
+            <li>{{ fruit }}</li>
+        {% empty %}
+            <li>No items found</li>
+        {% endfor %}
+    </ul>
+{% endcomment %}
+
+{% comment "if...endif" %}
+    {% if sub1 >= PM and sub2 >= PM and sub3 >= PM %}
+        Result : PASS
+    {% else %}
+        Result : FAIL
+    {% endif %}
+{% endcomment %}
+
+{% comment "load" %}
+{% load humanize %}
+{% filter apnumber %}
+    2
+{% endfilter %}
+{% endcomment %}
+
+{% comment "loarem" %}
+{% lorem %} # Single Paragraph
+{% lorem 2 p%} #Two paragraph
+{% lorem 2 p random %} #Two paragraph random
+{% endcomment %}
+
+{% comment "now" %}
+<p>{% now "jS F Y H:i" %}</p>
+<p>{% now "SHORT_DATETIME_FORMAT" %}</p>
+{% endcomment %}
+
+{% regroup cities by country as country_list %}
+<ul>
+{% for country in country_list %}
+    <li>{{ country.grouper }}
+    <ul>
+        {% for city in country.list %}
+          <li>{{ city.name }}: {{ city.population }}</li>
+        {% endfor %}
+    </ul>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
