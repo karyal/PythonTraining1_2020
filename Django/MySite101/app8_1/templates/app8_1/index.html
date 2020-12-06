@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Persons</title>
+</head>
+<body>
+    <h3>All Persons</h3>
+    <table border="1">
+        <thead>
+            <td>SN</td>
+            <td>NAME</td>
+            <td>ADDRESS</td>
+        </thead>
+        <tbody>
+            {% for person in persons %}
+            <tr>
+                <td>{{ person.pid }}</td>
+                <td>{{ person.full_name }}</td>
+                <td>{{ person.contact_address }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
