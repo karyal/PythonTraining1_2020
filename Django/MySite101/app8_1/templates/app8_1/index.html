@@ -5,23 +5,25 @@
     <title>All Persons</title>
 </head>
 <body>
-    <h3>All Persons</h3>
-    <p><a href="display_new_form">ADD NEW</a></p>
-    <table border="1">
-        <thead>
-            <td>SN</td>
-            <td>NAME</td>
-            <td>ADDRESS</td>
-        </thead>
-        <tbody>
-            {% for person in persons %}
-            <tr>
-                <td>{{ person.pid }}</td>
-                <td>{{ person.full_name }}</td>
-                <td>{{ person.contact_address }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<h3>All Persons</h3>
+<p><a href="display_new_form">ADD NEW</a></p>
+<table border="1">
+    <thead>
+    <td>SN</td>
+    <td>NAME</td>
+    <td>ADDRESS</td>
+    <td>CONTROL</td>
+    </thead>
+    <tbody>
+    {% for person in persons %}
+        <tr>
+            <td>{{ person.pid }}</td>
+            <td>{{ person.full_name }}</td>
+            <td>{{ person.contact_address }}</td>
+            <td><a href="display_edit_form?pid={{ person.pid }}">EDIT</a> | <a href="delete_person?pid={{ person.pid }}">DELETE</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>

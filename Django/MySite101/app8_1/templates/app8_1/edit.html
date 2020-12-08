@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person Entry</title>
+</head>
+<body>
+<h3> Person Edit Form</h3>
+<form method="post" action="update_person/">
+    {% csrf_token %}
+    ID : <input type="text", name="txt_id" value="{{ person.pid }}"><br/>
+    NAME : <input type="text", name="txt_name" value="{{ person.full_name }}"><br/>
+    ADDRESS : <input type="text", name="txt_address" value="{{ person.contact_address }}"><br/>
+    <input type="submit", value="SAVE">
+</form>
+</body>
+</html>
