@@ -8,4 +8,5 @@ urlpatterns = [
     path('display_edit_form', views.display_edit_form),
     path('update_person/', views.update_person),
     path('delete_person/', views.delete_person),
+    path('crud_model/', views.crud_model),
 ]
