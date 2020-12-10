@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Persons</title>
+</head>
+<body>
+<h3>All Persons</h3>
+<p><a href="new">Add New</a></p>
+<table border="1">
+    <thead>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>ADDRESS</td>
+        <td>CONTROL</td>
+    </thead>
+    {% for person in persons %}
+        <tr>
+            {% for value in person %}
+                <td>{{ value|default:"NA" }}</td>
+            {% endfor %}
+            <td><a href="edit?pid={{person.0 }}">EDIT</a> | <a href="display_delete?pid={{person.0 }}">DELETE</a></td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

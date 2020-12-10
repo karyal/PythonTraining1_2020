@@ -136,6 +136,7 @@ def crud_model(request):
     result = Person.objects.all()
 
 # Update
+    # Individual Record Update
     person  = Person()
     person.pid=1
     person.full_name="Keshor Thapa"

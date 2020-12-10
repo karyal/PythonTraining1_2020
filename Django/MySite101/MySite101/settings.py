@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', # Static Files?
     'django.contrib.humanize',
-    'app1', 'app2', 'app3_1','app3_2', 'app4_0', 'app4_1', 'app4_2', 'app4_3','app5_1', 'app8_1',
+    'app1', 'app2', 'app3_1','app3_2', 'app4_0', 'app4_1', 'app4_2', 'app4_3','app5_1', 'app6_1', 'app8_1',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person Entry Form</title>
+</head>
+<body>
+    <h3>New Person Entry Form-1</h3>
+    <form action="insert/" method="get">
+        ID : <input type="text" name="txt_id"><br/>
+        NAME : <input type="text" name="txt_name"><br/>
+        ADDRESS : <input type="text" name="txt_address"><br/>
+        <input type="submit" value="SAVE">
+    </form>
+    <hr/>
+    <h3>New Person Entry Form-2</h3>
+    <form action="insert/" method="post">
+        {% csrf_token %}
+        ID : <input type="text" name="txt_id"><br/>
+        NAME : <input type="text" name="txt_name"><br/>
+        ADDRESS : <input type="text" name="txt_address"><br/>
+        <input type="submit" value="SAVE">
+    </form>
+</body>
+</html>

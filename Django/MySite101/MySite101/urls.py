@@ -31,6 +31,7 @@ urlpatterns = [
     path('app4_3/', include('app4_3.urls')),
     path('app5_1/', include('app5_1.urls')),
     # 6. Database Configuration & Migration
+    path('app6_1/', include('app6_1.urls')),
     # 7. Admin Site - Create Super User and Login
     path('admin/', admin.site.urls),# Add Admin Site
     path('app8_1/', include('app8_1.urls')),
