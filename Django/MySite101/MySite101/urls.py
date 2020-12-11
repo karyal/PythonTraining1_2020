@@ -35,4 +35,5 @@ urlpatterns = [
     # 7. Admin Site - Create Super User and Login
     path('admin/', admin.site.urls),# Add Admin Site
     path('app8_1/', include('app8_1.urls')),
+    path('app9_1/', include('app9_1.urls')),
 ]

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', # Static Files?
     'django.contrib.humanize',
-    'app1', 'app2', 'app3_1','app3_2', 'app4_0', 'app4_1', 'app4_2', 'app4_3','app5_1', 'app6_1', 'app8_1',
+    'app1', 'app2', 'app3_1','app3_2', 'app4_0', 'app4_1', 'app4_2', 'app4_3','app5_1', 'app6_1', 'app8_1', 'app9_1'
 ]
 
 MIDDLEWARE = [
@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'MySite101.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'sqlite': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'default':{
+    'mysql':{
         'ENGINE': 'django.db.backends.mysql',
         'HOST': "localhost",
         'PORT': "3306",
